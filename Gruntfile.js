@@ -54,25 +54,7 @@ module.exports = function(grunt) {
         karma: {
             unit: {
                 options: {
-                    configFile: 'karma.conf.js',
-                    browsers: ['PhantomJS'],
-                    singleRun: true,
-                    reporters: ['progress','coverage'],
-                    preprocessors: { 'app/assets/js/modules/**/*.js': ['coverage']},
-                    coverageReporter: {
-                        reporters:[
-                            {type: 'html', dir:'test/reports/jscoverage'},
-                            {type: 'cobertura', dir:'test/reports/', file:'jscoverage.xml'}
-                        ]
-                    }
-                }
-            },
-            allbrowsers: {
-                options: {
-                    files: ['app/assets/js/modules/**/*.js', 'app/assets/js/modules-test/*.js'],
-                    configFile: 'karma.conf.js',
-                    browsers: ['PhantomJS', "Chrome", "Firefox"],
-                    singleRun: true
+                    configFile: 'karma.conf.js'
                 }
             }
         },
@@ -102,8 +84,8 @@ module.exports = function(grunt) {
                     baseUrl: "app/assets/js/modules",
                     paths: {},
                     keepBuildDir: true,
-                    name: "hanleyandco/main",
-                    out: "static/js/main.js"
+                    name: "hanleyandco/controller",
+                    out: "static/js/controller.js"
                 }
             },
             "compile-dev": {
@@ -111,8 +93,8 @@ module.exports = function(grunt) {
                     baseUrl: "app/assets/js/modules",
                     paths: {},
                     keepBuildDir: true,
-                    name: "hanleyandco/main",
-                    out: "static/js/main.js",
+                    name: "hanleyandco/controller",
+                    out: "static/js/controller.js",
                     optimize: "none"
                 }
             }
