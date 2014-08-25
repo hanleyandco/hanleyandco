@@ -9,3 +9,5 @@ node_modules
 .sass-cache
 .pyc*
 test/*
+coverage/*
+static/*
