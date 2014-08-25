@@ -16,6 +16,6 @@ $app->get(
 $app->get(
     '',
     function(Silex\Application $app) {
-        return $app['main-controller']->show('index');
+        return $app['main-controller']->show();
     }
 );

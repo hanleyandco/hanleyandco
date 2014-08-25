@@ -11,7 +11,7 @@ class Controller {
         $this->_app = $app;
     }
 
-    public function show($page) {
+    public function show($page = 'index') {
         $this->_page = $page;
         return $page;
     }

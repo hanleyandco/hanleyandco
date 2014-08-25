@@ -17,8 +17,18 @@ class ControllerTest extends \PHPUnit_Framework_TestCase {
     }
 
     /** @test */
-    public function trueIsTrue() {
-        $this->assertEquals(true, true);
+    public function showsTheIndexIfNoPageProvided() {
+        $page = $this->mockController->show();
+
+        $this->assertEquals($page, 'index');
     }
 
+    /** @test */
+    public function showsThePageProvidedToIt() {
+        $expected = 'somePage';
+
+        $actual = $this->mockController->show($expected);
+
+        $this->assertEquals($expected, $actual);
+    }
 }
