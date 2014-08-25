@@ -75,7 +75,7 @@ module.exports = function(grunt) {
             options: {
                 configuration: 'app/tests/phpunit.xml',
                 colors: true,
-                bin: 'php -dapc.enable_cli=1 vendor/phpunit/phpunit/composer/bin/phpunit'
+                bin: 'php -dapc.enable_cli=1 vendor/phpunit/phrpunit/composer/bin/phpunit'
             }
         },
         requirejs: {

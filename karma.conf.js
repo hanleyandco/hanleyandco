@@ -16,15 +16,22 @@ module.exports = function (config) {
             'app/assets/js/modules-test/vendors/jasmine-sinon.js',
             'app/assets/js/modules-test/mockRequireJSModules.js',
             {pattern: 'app/assets/js/modules/**/*.js', included: false},
-            {pattern: 'app/assets/js/modules-test/*.js', included: false}
+            {pattern: 'app/assets/js/modules-test/*.js', included: false},
+            'app/assets/js/testMain.js'
         ],
 
-        // list of files to exclude
-        exclude: [],
+        // Preprocesors to build files before run
+        preprocessors: { 'app/assets/js/modules/**/*.js': ['coverage']},
 
         // test results reporter to use
         // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
         reporters: ['progress', 'coverage'],
+        coverageReporter: {
+            reporters:[
+                {type: 'html', dir:'test/reports/jscoverage'},
+                {type: 'cobertura', dir:'test/reports/', file:'jscoverage.xml'}
+            ]
+        },
 
         // web server port
         port: 9876,
@@ -37,7 +44,7 @@ module.exports = function (config) {
         logLevel: config.LOG_INFO,
 
         // enable / disable watching file and executing tests whenever any file changes
-        autoWatch: false,
+        autoWatch: true,
 
         // Start these browsers, currently available:
         // - Chrome

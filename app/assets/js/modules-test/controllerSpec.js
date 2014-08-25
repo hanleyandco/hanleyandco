@@ -1,11 +1,4 @@
-require.config({
-    "map": {
-        "hanleyandco/controller": {
-
-        }
-    }
-});
-
+/* global require, define, describe, beforeEach, afterEach, it, spyOn, expect, jasmine */
 define(
     [
         'hanleyandco/controller'
@@ -23,11 +16,11 @@ define(
 
             it('can be initilised', function() {
                 spyOn(controller, 'init').andCallThrough();
+
                 controller.init();
 
                 expect(controller.init).toHaveBeenCalled();
             });
-
         });
     }
 );

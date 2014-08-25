@@ -1,6 +1,7 @@
 define(
     "hanleyandco/controller",
-    [],
+    [
+    ],
 
     function () {
         "use strict";
