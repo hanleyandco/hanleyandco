@@ -15,6 +15,7 @@ module.exports = function (config) {
             'app/assets/js/modules-test/vendors/sinon.js',
             'app/assets/js/modules-test/vendors/jasmine-sinon.js',
             'app/assets/js/modules-test/mockRequireJSModules.js',
+            'vendor/components/jquery/jquery.min.js',
             {pattern: 'app/assets/js/modules/**/*.js', included: false},
             {pattern: 'app/assets/js/modules-test/*.js', included: false},
             'app/assets/js/testMain.js'
