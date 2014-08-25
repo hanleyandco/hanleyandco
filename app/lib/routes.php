@@ -12,3 +12,10 @@ $app->get(
         return $app['main-controller']->show($page);
     }
 );
+
+$app->get(
+    '',
+    function(Silex\Application $app) {
+        return $app['main-controller']->show('index');
+    }
+);

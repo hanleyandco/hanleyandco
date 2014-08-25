@@ -9,6 +9,7 @@ $app = new Silex\Application();
 \Symfony\Component\Debug\ExceptionHandler::register();
 
 // ...definitions ?
+$app->register(new Hanleyandco\ServiceProvider());
 $app['debug'] = true;
 
 require 'routes.php';
