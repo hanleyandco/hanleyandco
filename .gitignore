@@ -1,0 +1,10 @@
+/vendor
+composer.phar
+.DS-Store
+Thumbs.db
+.idea
+.iml
+node_modules
+.bundle
+.sass-cache
+.pyc*

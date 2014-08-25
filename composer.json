@@ -1,0 +1,14 @@
+{
+    "name": "xepps/hanleyandco",
+    "description": "Hanley and Co Chartered Accountants Website",
+    "require": {
+        "silex/silex": "~1.2",
+        "twbs/bootstrap": "3.2.*",
+        "components/jquery": "1.9.*"
+    },
+    "require-dev": {
+        "mockery/mockery": "0.8.*",
+        "phpunit/phpunit": "3.7.*",
+        "squizlabs/php_codesniffer": "1.*"
+    }
+}
