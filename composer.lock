@@ -1,10 +1,10 @@
-f{
+{
     "_readme": [
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a11dfe87e28676b07a8a73a764dd1e8b",
+    "hash": "9be71f7cfb611071952bd2aa47c64023",
     "packages": [
         {
             "name": "components/jquery",
