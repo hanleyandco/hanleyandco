@@ -1,10 +1,11 @@
 /vendor
 composer.phar
-.DS-Store
+.DS_Store
 Thumbs.db
 .idea
-.iml
+*.iml
 node_modules
 .bundle
 .sass-cache
 .pyc*
+test/*
