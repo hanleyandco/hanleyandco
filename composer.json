@@ -4,7 +4,8 @@
     "require": {
         "silex/silex": "~1.2",
         "twbs/bootstrap": "3.2.*",
-        "components/jquery": "1.9.*"
+        "components/jquery": "1.9.*",
+        "xepps/hanleyandco-content": "0.1.*"
     },
     "require-dev": {
         "mockery/mockery": "0.8.*",

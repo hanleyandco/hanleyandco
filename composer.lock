@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9be71f7cfb611071952bd2aa47c64023",
+    "hash": "82fe3357033b4a4818f9271fa4022050",
     "packages": [
         {
             "name": "components/jquery",
@@ -737,6 +737,25 @@
                 "web"
             ],
             "time": "2014-06-26 16:36:48"
+        },
+        {
+            "name": "xepps/hanleyandco-content",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xepps/hanleyandco-content.git",
+                "reference": "f6edf634dd0de7a66700d67a29deb10bfdc2bafb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xepps/hanleyandco-content/zipball/f6edf634dd0de7a66700d67a29deb10bfdc2bafb",
+                "reference": "f6edf634dd0de7a66700d67a29deb10bfdc2bafb",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Hanley and Co Chartered Accountants Website Content",
+            "time": "2014-08-26 08:34:39"
         }
     ],
     "packages-dev": [
