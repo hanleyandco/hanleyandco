@@ -47,11 +47,35 @@ module.exports = function(grunt) {
                 src: "non-spriteable-images/*",
                 dest: "static/images/"
             },
-            content : {
+            content: {
                 expand: true,
                 cwd: "vendor/xepps/hanleyandco-content/pages/",
                 src: "*",
                 dest: "static/content/"
+            },
+            bootstrapCss: {
+                expand: true,
+                cwd: "vendor/twbs/bootstrap/dist/css/",
+                src: "*.min.css",
+                dest: "static/css/vendor/bootstrap/"
+            },
+            bootstrapJs: {
+                expand: true,
+                cwd: "vendor/twbs/bootstrap/dist/js/",
+                src: "bootstrap.min.js",
+                dest: "static/js/vendor/bootstrap/"
+            },
+            bootstrapFonts: {
+                expand: true,
+                cwd: "vendor/twbs/bootstrap/dist/fonts/",
+                src: "*",
+                dest: "static/fonts/vendor/bootstrap/"
+            },
+            jQuery: {
+                expand: true,
+                cwd: "vendor/components/jquery/",
+                src: "jquery.min.js",
+                dest: "static/js/vendor/jquery/"
             }
         },
         jshint: {
@@ -160,7 +184,18 @@ module.exports = function(grunt) {
         'install-deps',
         [
             'composer:install',
-            'bundle'
+            'bundle',
+            'install-bootstrap',
+            'copy:jQuery'
+        ]
+    );
+
+    grunt.registerTask(
+        'install-bootstrap',
+        [
+            'copy:bootstrapCss',
+            'copy:bootstrapJs',
+            'copy:bootstrapFonts'
         ]
     );
 
