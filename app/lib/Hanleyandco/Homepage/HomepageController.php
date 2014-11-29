@@ -6,19 +6,22 @@ use Hanleyandco\ModelBuilder;
 
 class HomepageController {
 
-    protected $_page;
     protected $_app;
-    protected $_model;
+    protected $_config;
+    protected $_modelBuilder;
 
-    public function __construct(\Silex\Application $app) {
+    public function __construct(\Silex\Application $app, $config, ModelBuilder $modelBuilder) {
         $this->_app = $app;
+        $this->_config = $config;
+        $this->_modelBuilder = $modelBuilder;
     }
 
     public function show() {
         return $this->_app['view-factory'](
             'index',
             array(
-                "model" => $this->_app['model-builder']->buildHomepageModel()
+                "staticDir" => $this->_config['staticDir'],
+                "model" => $this->_modelBuilder->buildHomepageModel()
             )
         );
     }

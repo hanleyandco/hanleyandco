@@ -6,11 +6,6 @@ use Hanleyandco\Homepage\HomepageModel;
 
 class XmlModelBuilder implements ModelBuilder {
 
-    public function __construct()
-    {
-
-    }
-
     public function buildHomepageModel()
     {
         $data = simplexml_load_file(__DIR__.'/../../../vendor/xepps/hanleyandco-content/pages/home.xml');

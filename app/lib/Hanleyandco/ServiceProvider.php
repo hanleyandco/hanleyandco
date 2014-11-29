@@ -9,8 +9,20 @@ use Silex\ServiceProviderInterface;
 class ServiceProvider implements ServiceProviderInterface
 {
     public function register(Application $app) {
+        $app['config'] = function() {
+            return include 'config/config.php';
+        };
+
+        $app['model-builder'] = function() {
+            return new XmlModelBuilder();
+        };
+
         $app['home-controller'] = function($app) {
-            return new HomepageController($app);
+            return new HomepageController(
+                $app,
+                $app['config'],
+                $app['model-builder']
+            );
         };
 
         $app['view-factory'] = function() {
@@ -18,10 +30,6 @@ class ServiceProvider implements ServiceProviderInterface
                 $viewPath = __DIR__ . '/../views/' . $viewName . '.php';
                 return new ViewResponse($viewPath, $viewArgs, $statusCode, $headers);
             };
-        };
-
-        $app['model-builder'] = function() {
-            return new XmlModelBuilder();
         };
     }
 
