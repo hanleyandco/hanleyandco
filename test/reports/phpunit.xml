@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="app/tests" tests="6" assertions="7" failures="0" errors="0" time="0.047803">
-    <testsuite name="Hanleyandco\Controllers\ControllerTest" file="/Users/kristianepps/workspace/hanleyandco/app/tests/Hanleyandco/Controllers/ControllerTest.php" namespace="Hanleyandco\Controllers" fullPackage="Hanleyandco.Controllers" tests="2" assertions="2" failures="0" errors="0" time="0.005205">
-      <testcase name="showsTheIndexIfNoPageProvided" class="Hanleyandco\Controllers\ControllerTest" file="/Users/kristianepps/workspace/hanleyandco/app/tests/Hanleyandco/Controllers/ControllerTest.php" line="20" assertions="1" time="0.004661"/>
-      <testcase name="showsThePageProvidedToIt" class="Hanleyandco\Controllers\ControllerTest" file="/Users/kristianepps/workspace/hanleyandco/app/tests/Hanleyandco/Controllers/ControllerTest.php" line="27" assertions="1" time="0.000544"/>
-    </testsuite>
-    <testsuite name="Hanleyandco\GitXmlAdapterTest" file="/Users/kristianepps/workspace/hanleyandco/app/tests/Hanleyandco/GitXmlAdapterTest.php" namespace="Hanleyandco" fullPackage="Hanleyandco" tests="4" assertions="5" failures="0" errors="0" time="0.042598">
-      <testcase name="theAdapterKnowsAllOfTheBrowsablePages" class="Hanleyandco\GitXmlAdapterTest" file="/Users/kristianepps/workspace/hanleyandco/app/tests/Hanleyandco/GitXmlAdapterTest.php" line="18" assertions="1" time="0.000495"/>
-      <testcase name="theAdapterDoesntReturnDotAndDoubleDotAsValidPages" class="Hanleyandco\GitXmlAdapterTest" file="/Users/kristianepps/workspace/hanleyandco/app/tests/Hanleyandco/GitXmlAdapterTest.php" line="23" assertions="2" time="0.000614"/>
-      <testcase name="theAdapterCanReturnAPageThatExists" class="Hanleyandco\GitXmlAdapterTest" file="/Users/kristianepps/workspace/hanleyandco/app/tests/Hanleyandco/GitXmlAdapterTest.php" line="31" assertions="1" time="0.000266"/>
-      <testcase name="theAdapterThrowsAnExceptionIfTheRequestedPageDoesNotExist" class="Hanleyandco\GitXmlAdapterTest" file="/Users/kristianepps/workspace/hanleyandco/app/tests/Hanleyandco/GitXmlAdapterTest.php" line="40" assertions="1" time="0.041223"/>
+  <testsuite name="Application Test Suite" tests="2" assertions="2" failures="0" errors="0" time="0.038867">
+    <testsuite name="Hanleyandco\Controllers\ControllerTest" file="/Applications/MAMP/htdocs/app/tests/Hanleyandco/Controllers/ControllerTest.php" namespace="Hanleyandco\Controllers" fullPackage="Hanleyandco.Controllers" tests="2" assertions="2" failures="0" errors="0" time="0.038867">
+      <testcase name="showsTheIndexIfNoPageProvided" class="Hanleyandco\Controllers\ControllerTest" file="/Applications/MAMP/htdocs/app/tests/Hanleyandco/Controllers/ControllerTest.php" line="20" assertions="1" time="0.038124"/>
+      <testcase name="showsThePageProvidedToIt" class="Hanleyandco\Controllers\ControllerTest" file="/Applications/MAMP/htdocs/app/tests/Hanleyandco/Controllers/ControllerTest.php" line="27" assertions="1" time="0.000743"/>
     </testsuite>
   </testsuite>
 </testsuites>
