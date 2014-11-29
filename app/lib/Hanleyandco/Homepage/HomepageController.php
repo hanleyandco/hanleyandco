@@ -2,6 +2,8 @@
 
 namespace Hanleyandco\Homepage;
 
+use Hanleyandco\ModelBuilder;
+
 class HomepageController {
 
     protected $_page;
@@ -16,7 +18,7 @@ class HomepageController {
         return $this->_app['view-factory'](
             'index',
             array(
-                'some_var' => 'woohoo!'
+                "model" => $this->_app['model-builder']->buildHomepageModel()
             )
         );
     }

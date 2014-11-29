@@ -19,6 +19,10 @@ class ServiceProvider implements ServiceProviderInterface
                 return new ViewResponse($viewPath, $viewArgs, $statusCode, $headers);
             };
         };
+
+        $app['model-builder'] = function() {
+            return new XmlModelBuilder();
+        };
     }
 
     public function boot(Application $app) {
