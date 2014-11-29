@@ -46,6 +46,12 @@ module.exports = function(grunt) {
                 cwd: "app/assets/images/",
                 src: "non-spriteable-images/*",
                 dest: "static/images/"
+            },
+            content : {
+                expand: true,
+                cwd: "vendor/xepps/hanleyandco-content/pages/",
+                src: "*",
+                dest: "static/content/"
             }
         },
         jshint: {
@@ -114,6 +120,10 @@ module.exports = function(grunt) {
             jsVendor: {
                 files: ['app/assets/js/vendors/*.js'],
                 tasks: ['copy:jsVendor']
+            },
+            contentVendor: {
+                files: ['vendor/xepps/hanleyandco-content/**/*.xml'],
+                tasks: ['copy:content']
             }
         }
     });
@@ -160,6 +170,7 @@ module.exports = function(grunt) {
             'requirejs:compile-dev',
             'copy:jsVendor',
             'copy:nonSpriteableImages',
+            'copy:content',
             'compass:dev'
         ]
     );
@@ -170,6 +181,7 @@ module.exports = function(grunt) {
             'requirejs:compile',
             'copy:jsVendor',
             'copy:nonSpriteableImages',
+            'copy:content',
             'compass:dist'
         ]
     );
