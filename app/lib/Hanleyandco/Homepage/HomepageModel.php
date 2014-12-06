@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: kristianepps
- * Date: 29/11/2014
- * Time: 13:44
- */
 
 namespace Hanleyandco\Homepage;
-
 
 class HomepageModel {
 
@@ -24,6 +17,10 @@ class HomepageModel {
 
     public function getTitle() {
         return $this->_title;
+    }
+
+    public function getNavBar() {
+
     }
 
 } 
