@@ -82,6 +82,12 @@ module.exports = function(grunt) {
                 cwd: "vendor/components/jquery/",
                 src: "jquery.min.js",
                 dest: "static/js/vendor/jquery/"
+            },
+            requireJS: {
+                expand: true,
+                cwd: "node_modules/requirejs/",
+                src: "require.js",
+                dest: "static/js/vendor/requirejs/"
             }
         },
         jshint: {
@@ -196,7 +202,8 @@ module.exports = function(grunt) {
             'composer:install',
             'bundle',
             'install-bootstrap',
-            'copy:jQuery'
+            'copy:jQuery',
+            'copy:requireJS'
         ]
     );
 

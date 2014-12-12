@@ -1,16 +1,21 @@
 define(
     "hanleyandco/navBar",
-    [],
-    function () {
+    [
+        "hanleyandco/util"
+    ],
+    function (Util) {
         "use strict";
 
-        var NavBar = function (navBarElement) {
+        var NavBar = function (page, navBarElement) {
+            this.page = page;
             this.navBar = navBarElement;
         };
 
         NavBar.prototype.init = function () {
-            this.navBar.collapse("show");
+            var self = this;
+
         };
+
 
         return NavBar;
     }

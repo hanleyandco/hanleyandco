@@ -78,7 +78,8 @@
         </div> <!-- /container -->
 
         <!-- Placed down here so that the document loads first -->
-        <script src="<?= $staticDir; ?>/js/controller.js"></script>
+
+        <script src="<?= $staticDir; ?>/js/vendor/requirejs/require.js"></script>
         <script src="<?= $staticDir; ?>/js/vendor/jquery/jquery.min.js"></script>
         <script src="<?= $staticDir; ?>/js/vendor/bootstrap/bootstrap.min.js"></script>
         <script src="<?= $staticDir; ?>/js/controller.js"></script>
