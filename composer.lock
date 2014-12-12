@@ -53,16 +53,16 @@
         },
         {
             "name": "kriswallsmith/assetic",
-            "version": "v1.2.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "df991c124a2212371443b586a1be767500036dee"
+                "reference": "b20efe38845d20458702f97f3ff625d80805897b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/df991c124a2212371443b586a1be767500036dee",
-                "reference": "df991c124a2212371443b586a1be767500036dee",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/b20efe38845d20458702f97f3ff625d80805897b",
+                "reference": "b20efe38845d20458702f97f3ff625d80805897b",
                 "shasum": ""
             },
             "require": {
@@ -123,7 +123,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2014-10-14 14:45:32"
+            "time": "2014-12-12 05:04:05"
         },
         {
             "name": "pimple/pimple",
@@ -743,16 +743,16 @@
         },
         {
             "name": "xepps/hanleyandco-content",
-            "version": "0.5.0",
+            "version": "0.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hanleyandco/hanleyandco-content.git",
-                "reference": "793720d0b305999f5f9246c73dee1d53d28d8dd1"
+                "reference": "1863ebc0aa7a49ecdcdbff4d6bdd876c65d2d26c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hanleyandco/hanleyandco-content/zipball/793720d0b305999f5f9246c73dee1d53d28d8dd1",
-                "reference": "793720d0b305999f5f9246c73dee1d53d28d8dd1",
+                "url": "https://api.github.com/repos/hanleyandco/hanleyandco-content/zipball/1863ebc0aa7a49ecdcdbff4d6bdd876c65d2d26c",
+                "reference": "1863ebc0aa7a49ecdcdbff4d6bdd876c65d2d26c",
                 "shasum": ""
             },
             "type": "library",
@@ -763,7 +763,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "Hanley and Co Chartered Accountants Website Content",
-            "time": "2014-12-06 16:20:02"
+            "time": "2014-12-12 09:23:52"
         }
     ],
     "packages-dev": [
