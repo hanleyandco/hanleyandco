@@ -1,0 +1,18 @@
+.section {
+    img {
+        margin-bottom: 16px;
+    }
+
+    p {
+        @extend %type-paragraph;
+    }
+
+    .section-intro {
+        @extend %type-paragraph-intro;
+    }
+
+    .quote {
+        
+    }
+
+}

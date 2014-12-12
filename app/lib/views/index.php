@@ -41,15 +41,8 @@
 
         <div class="container theme-showcase" role="main">
 
-            <!-- Main jumbotron for a primary marketing message or call to action -->
-            <div class="jumbotron">
-                <h1><?= $model->getTitle() ?></h1>
-                <p>Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass. </p>
-                <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
-            </div>
-
             <? foreach($model->getSections() as $section): ?>
-                <div class="page-section">
+                <div class="section">
 
                     <div class="page-header">
                         <a id="<?=$section->getId() ?>"></a><h2><?= $section->getTitle() ?></h2>
