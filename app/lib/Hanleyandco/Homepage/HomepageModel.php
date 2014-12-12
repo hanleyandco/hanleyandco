@@ -45,7 +45,7 @@ class SectionModel {
         $this->_id = Util::convertStringToId($title);
         $this->_image = $content->image;
         $this->_intro = $content->intro;
-        $this->_paragraphs = $content->paragraphs;
+        $this->_paragraphs = $content->paragraph;
 
         foreach($content->quote as $quote) {
             $this->_quotes[] = new QuoteModel(

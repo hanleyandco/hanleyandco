@@ -48,10 +48,19 @@
                 <p><a href="#" class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
             </div>
 
-
             <? foreach($model->getSections() as $section): ?>
                 <div class="page-header">
                     <a id="<?=$section->getId() ?>"></a><h2><?= $section->getTitle() ?></h2>
+
+                    <? if($section->getIntro()): ?>
+                        <p class="section-intro"><?= $section->getIntro() ?></p>
+                    <? endif; ?>
+
+                    <? if($section->getParagraphs()): ?>
+                        <? foreach($section->getParagraphs() as $paragraph): ?>
+                            <p><?= $paragraph ?></p>
+                        <? endforeach; ?>
+                    <? endif; ?>
                 </div>
             <? endforeach; ?>
 
