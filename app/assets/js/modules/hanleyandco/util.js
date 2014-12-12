@@ -7,16 +7,6 @@ define(
 
         var Util = {
 
-            removeClass: function(element, cls) {
-                if(element) {
-                    if(element.classList) {
-                        element.classList.remove(cls);
-                    }
-                    element.className = element.classname.replace(cls, '');
-                }
-                element.classList.remove(cls);
-            },
-
             addEvent: function(type, listener, element) {
                 if (!element) {
                     element = window;
@@ -38,6 +28,15 @@ define(
                     element.removeEventListener(type, listener, false);
                 } else if (element.detachEvent) {
                     element.detachEvent('on' + type, listener);
+                }
+            },
+
+            removeClass: function(element, cls) {
+                if(element) {
+                    if(element.classList) {
+                        element.classList.remove(cls);
+                    }
+                    element.className = element.className.replace(cls, '');
                 }
             }
 

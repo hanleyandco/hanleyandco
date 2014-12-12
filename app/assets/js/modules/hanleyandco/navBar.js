@@ -17,6 +17,10 @@ define(
 
             var navigateToSection = function(ev) {
                 ev.preventDefault();
+
+                console.log(self.navBar);
+                Util.removeClass(self.navBar, 'in');
+
                 var startOffset = window.pageYOffset;
                 var endOffset = self.scrollToPositionForHash(ev.srcElement.hash);
                 var distance = endOffset - startOffset;
