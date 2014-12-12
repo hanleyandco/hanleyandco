@@ -81,6 +81,14 @@
         <script src="<?= $staticDir; ?>/js/controller.js"></script>
         <script src="<?= $staticDir; ?>/js/vendor/jquery/jquery.min.js"></script>
         <script src="<?= $staticDir; ?>/js/vendor/bootstrap/bootstrap.min.js"></script>
+        <script src="<?= $staticDir; ?>/js/controller.js"></script>
+
+        <script>
+            require(["hanleyandco/controller"], function(Controller) {
+                var controller = new Controller(document);
+                controller.init();
+            });
+        </script>
 
     </body>
 </html>
