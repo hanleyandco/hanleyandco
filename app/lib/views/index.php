@@ -53,7 +53,6 @@
                 <div class="page-header">
                     <a id="<?=$section->getId() ?>"></a><h2><?= $section->getTitle() ?></h2>
                 </div>
-                <? print_r($section->getContent()) ?>
             <? endforeach; ?>
 
         </div> <!-- /container -->

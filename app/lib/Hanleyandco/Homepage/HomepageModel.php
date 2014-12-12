@@ -17,10 +17,6 @@ class HomepageModel {
         }
     }
 
-    public function setTitle($title) {
-        $this->_title = $title;
-    }
-
     public function getTitle() {
         return $this->_title;
     }
@@ -39,12 +35,23 @@ class SectionModel {
 
     private $_title;
     private $_id;
-    private $_content;
+    private $_image;
+    private $_paragraphs;
+    private $_intro;
+    private $_quotes;
 
     public function __construct($title, $content) {
         $this->_title = $title;
         $this->_id = Util::convertStringToId($title);
-        $this->_content = $content;
+        $this->_image = $content->image;
+        $this->_intro = $content->intro;
+        $this->_paragraphs = $content->paragraphs;
+
+        foreach($content->quote as $quote) {
+            $this->_quotes[] = new QuoteModel(
+                $quote->text, $quote->attribution->name, $quote->attribution->company
+            );
+        }
     }
 
     /**
@@ -66,8 +73,70 @@ class SectionModel {
     /**
      * @return mixed
      */
-    public function getContent()
+    public function getImage()
     {
-        return $this->_content;
+        return $this->_image;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getParagraphs()
+    {
+        return $this->_paragraphs;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIntro()
+    {
+        return $this->_intro;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getQuotes()
+    {
+        return $this->_quotes;
+    }
+}
+
+class QuoteModel {
+
+    private $_text;
+    private $_name;
+    private $_company;
+
+    public function __construct($text, $name, $company) {
+        $this->_text = $text;
+        $this->_name = $name;
+        $this->_company = $company;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getText()
+    {
+        return $this->_text;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->_name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCompany()
+    {
+        return $this->_company;
+    }
+
 }
