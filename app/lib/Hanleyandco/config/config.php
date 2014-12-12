@@ -2,6 +2,6 @@
 
 return Array(
 
-    "staticDir" => "/static"
-
+    "staticDir" => "/static",
+    "imageDir" => "/static/images"
 );

@@ -49,8 +49,15 @@
             </div>
 
             <? foreach($model->getSections() as $section): ?>
-                <div class="page-header">
-                    <a id="<?=$section->getId() ?>"></a><h2><?= $section->getTitle() ?></h2>
+                <div class="page-section">
+
+                    <div class="page-header">
+                        <a id="<?=$section->getId() ?>"></a><h2><?= $section->getTitle() ?></h2>
+                    </div>
+
+                    <? if($section->getImage()): ?>
+                        <img class="img-thumbnail" src="<?= $staticDir ?>/images/<?= $section->getImage() ?>" />
+                    <? endif; ?>
 
                     <? if($section->getIntro()): ?>
                         <p class="section-intro"><?= $section->getIntro() ?></p>
@@ -61,6 +68,17 @@
                             <p><?= $paragraph ?></p>
                         <? endforeach; ?>
                     <? endif; ?>
+
+                    <? if($section->getQuotes()): ?>
+                        <? foreach($section->getQuotes() as $quote): ?>
+                            <blockquote class="quote">
+                                <p class="text"><?= $quote->getText() ?></p>
+                                <p class="attribution-name"><?= $quote->getName() ?></p>
+                                <p class="attribution-company"><?= $quote->getCompany() ?></p>
+                            </blockquote>
+                        <? endforeach; ?>
+                    <? endif; ?>
+
                 </div>
             <? endforeach; ?>
 
