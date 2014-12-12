@@ -17,7 +17,7 @@ define(
         };
 
         Controller.prototype.initNavBar = function() {
-            var navBar = new NavBar(this.page, document.querySelector("#navbar"));
+            var navBar = new NavBar(this.page, this.page.querySelector("#navbar"));
             navBar.init();
         };
 

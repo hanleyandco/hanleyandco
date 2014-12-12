@@ -12,7 +12,13 @@ define(
         describe('Main JS Controller', function () {
 
             beforeEach(function() {
-                controller = new Controller();
+
+                var canvas = document.createElement('div');
+                var navBar = document.createElement('div');
+                navBar.id = "navbar";
+                canvas.appendChild(navBar);
+
+                controller = new Controller(canvas);
             });
 
             it('can be initilised', function () {
@@ -24,8 +30,11 @@ define(
             });
 
             it('has access to jquery', function () {
-                console.log(jquery);
                 expect(jquery).not.toBeNull();
+            });
+
+            it('can initialise a navbar', function () {
+
             })
         });
     }
