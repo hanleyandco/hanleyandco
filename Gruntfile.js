@@ -53,6 +53,12 @@ module.exports = function(grunt) {
                 src: "*",
                 dest: "static/content/"
             },
+            contentImages: {
+                expand:true,
+                cwd: "vendor/xepps/hanleyandco-content/images/",
+                src: "*",
+                dest: "static/images/"
+            },
             bootstrapCss: {
                 expand: true,
                 cwd: "vendor/twbs/bootstrap/dist/css/",
@@ -145,9 +151,13 @@ module.exports = function(grunt) {
                 files: ['app/assets/js/vendors/*.js'],
                 tasks: ['copy:jsVendor']
             },
-            contentVendor: {
-                files: ['vendor/xepps/hanleyandco-content/**/*.xml'],
+            contentVendorPages: {
+                files: ['vendor/xepps/hanleyandco-content/pages/*'],
                 tasks: ['copy:content']
+            },
+            contentVendorImages: {
+                files: ['vendor/xepps/hanleyandco-content/images/*'],
+                tasks: ['copy:contentImages']
             }
         }
     });
@@ -206,6 +216,7 @@ module.exports = function(grunt) {
             'copy:jsVendor',
             'copy:nonSpriteableImages',
             'copy:content',
+            'copy:contentImages',
             'compass:dev'
         ]
     );
@@ -217,6 +228,7 @@ module.exports = function(grunt) {
             'copy:jsVendor',
             'copy:nonSpriteableImages',
             'copy:content',
+            'copy:contentImages',
             'compass:dist'
         ]
     );
