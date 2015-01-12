@@ -75,6 +75,34 @@
                 </div>
             <? endforeach; ?>
 
+            <footer>
+                <? if($footer->getImages()): ?>
+                    <? foreach($footer->getImages() as $image) : ?>
+                        <img class="img-thumbnail no-border" src="<?= $staticDir ?>/images/<?= $image ?>" />
+                    <? endforeach; ?>
+                <? endif; ?>
+
+                <? if($footer->getCopyRight()): ?>
+                    <p class="copyright"><?= $footer->getCopyright(); ?></p>
+                <? endif; ?>
+
+                <? if($footer->getText()): ?>
+                    <p class="footer-text">
+                        <? foreach($footer->getText() as $line): ?>
+                            <?= $line ?><br />
+                        <? endforeach; ?>
+                    </p>
+                <? endif; ?>
+
+                <? if($footer->getLinks()): ?>
+                    <ul class="footer-nav">
+                        <? foreach($footer->getLinks() as $link): ?>
+                            <li><a href="<?= $link->url ?>"><?= $link->text ?></a></li>
+                        <? endforeach; ?>
+                    </ul>
+                <? endif; ?>
+            </footer>
+
         </div> <!-- /container -->
 
         <!-- Placed down here so that the document loads first -->
