@@ -22,7 +22,8 @@ class HomepageController {
             array(
                 "staticDir" => $this->_config['staticDir'],
                 "model" => $this->_modelBuilder->buildHomepageModel(),
-                "navBar" => $this->_modelBuilder->buildNavBar()
+                "navBar" => $this->_modelBuilder->buildNavBar(),
+                "footer" => $this->_modelBuilder->buildFooter()
             )
         );
     }

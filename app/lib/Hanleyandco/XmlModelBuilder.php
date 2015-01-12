@@ -2,9 +2,9 @@
 
 namespace Hanleyandco;
 
+use Hanleyandco\footer\FooterModel;
 use Hanleyandco\Homepage\HomepageModel;
 use Hanleyandco\NavBar\NavBarModel;
-use Hanleyandco\Util;
 
 class XmlModelBuilder implements ModelBuilder {
 
@@ -24,6 +24,13 @@ class XmlModelBuilder implements ModelBuilder {
                               "title" => $section[0]->header);
         }
         $model = new NavBarModel($navBar);
+        return $model;
+    }
+
+    public function buildFooter()
+    {
+        $data = simplexml_load_file(__DIR__.'/../../../static/content/footer.xml');
+        $model = new FooterModel($data->links, $data->text, $data->images, $data->copyright);
         return $model;
     }
 }
