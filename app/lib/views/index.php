@@ -75,35 +75,37 @@
                 </div>
             <? endforeach; ?>
 
-            <footer>
+        </div> <!-- /container -->
+
+        <footer>
+            <div class="images">
                 <? if($footer->getImages()): ?>
                     <? foreach($footer->getImages() as $image) : ?>
-                        <img class="img-thumbnail no-border" src="<?= $staticDir ?>/images/<?= $image ?>" />
+                        <img class="img-thumbnail logo" src="<?= $staticDir ?>/images/<?= $image ?>" />
                     <? endforeach; ?>
                 <? endif; ?>
+            </div>
 
-                <? if($footer->getCopyRight()): ?>
-                    <p class="copyright"><?= $footer->getCopyright(); ?></p>
-                <? endif; ?>
+            <? if($footer->getCopyRight()): ?>
+                <p class="copyright"><?= $footer->getCopyright(); ?></p>
+            <? endif; ?>
 
-                <? if($footer->getText()): ?>
-                    <p class="footer-text">
-                        <? foreach($footer->getText() as $line): ?>
-                            <?= $line ?><br />
-                        <? endforeach; ?>
-                    </p>
-                <? endif; ?>
+            <? if($footer->getText()): ?>
+                <p class="footer-text">
+                    <? foreach($footer->getText() as $line): ?>
+                        <?= $line ?><br />
+                    <? endforeach; ?>
+                </p>
+            <? endif; ?>
 
-                <? if($footer->getLinks()): ?>
-                    <ul class="footer-nav">
-                        <? foreach($footer->getLinks() as $link): ?>
-                            <li><a href="<?= $link->url ?>"><?= $link->text ?></a></li>
-                        <? endforeach; ?>
-                    </ul>
-                <? endif; ?>
-            </footer>
-
-        </div> <!-- /container -->
+            <? if($footer->getLinks()): ?>
+                <ul class="footer-nav">
+                    <? foreach($footer->getLinks() as $link): ?>
+                        <li><a class="link-<?= $link->name ?>" href="<?= $link->url ?>"><?= $link->text ?></a></li>
+                    <? endforeach; ?>
+                </ul>
+            <? endif; ?>
+        </footer>
 
         <!-- Placed down here so that the document loads first -->
 
