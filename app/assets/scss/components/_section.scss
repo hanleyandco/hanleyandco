@@ -1,18 +1,27 @@
 .section {
+    clear: both;
+    text-align: center;
+
     img {
         margin-bottom: 16px;
+
+        @include tablet() {
+            float: right;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
     }
 
     p {
         @extend %type-paragraph;
     }
 
-    .section-intro {
-        @extend %type-paragraph-intro;
+    h2 {
+        text-align: left;
     }
 
-    .quote {
-        
+    .section-intro {
+        @extend %type-paragraph-intro;
     }
 
 }

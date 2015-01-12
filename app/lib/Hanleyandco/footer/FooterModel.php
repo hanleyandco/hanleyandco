@@ -13,7 +13,7 @@ class FooterModel {
         $this->_links = $links;
         $this->_text = $text;
         $this->_images = $images;
-        $this->_copyright = "&copy;" . date("Y") . $copyright;
+        $this->_copyright = "&copy; " . date("Y") . " " . $copyright;
     }
 
     public function getLinks() {

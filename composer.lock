@@ -747,16 +747,16 @@
         },
         {
             "name": "xepps/hanleyandco-content",
-            "version": "0.8.0",
+            "version": "0.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hanleyandco/hanleyandco-content.git",
-                "reference": "dd902b73985e651fd74675e91325b7fac1cb7ed6"
+                "reference": "0bafbc4eda89d859a57504d888106865805c1482"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hanleyandco/hanleyandco-content/zipball/dd902b73985e651fd74675e91325b7fac1cb7ed6",
-                "reference": "dd902b73985e651fd74675e91325b7fac1cb7ed6",
+                "url": "https://api.github.com/repos/hanleyandco/hanleyandco-content/zipball/0bafbc4eda89d859a57504d888106865805c1482",
+                "reference": "0bafbc4eda89d859a57504d888106865805c1482",
                 "shasum": ""
             },
             "type": "library",
@@ -767,7 +767,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "Hanley and Co Chartered Accountants Website Content",
-            "time": "2015-01-12 18:36:41"
+            "time": "2015-01-12 19:17:12"
         }
     ],
     "packages-dev": [

@@ -22,3 +22,20 @@ body {
     line-height: 2.4rem;
     text-align: justify;
 }
+
+%type-copyright {
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 2.2rem;
+}
+
+%type-footer {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}
+
+%type-footer-links {
+    @extend %type-footer;
+
+    font-weight: bold;
+}
