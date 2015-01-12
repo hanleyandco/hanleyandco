@@ -1,0 +1,22 @@
+$image_path: "../images/";
+$desktop: "992px";
+$tablet: "768px";
+$phone-landscape: "481px";
+
+@mixin desktop() {
+    @media only screen and (min-width: $desktop) {
+        @content;
+    }
+}
+
+@mixin tablet() {
+    @media only screen and (min-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin phone-landscape() {
+    @media only screen and (min-width: $phone-landscape) {
+        @content;
+    }
+}

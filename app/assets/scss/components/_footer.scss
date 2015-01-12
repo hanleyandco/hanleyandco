@@ -1,0 +1,48 @@
+footer {
+    background: #eee;
+    padding: 20px 10px;
+    margin-top: 40px;
+    text-align: center;
+
+    .images {
+        display: block;
+        margin: auto;
+        max-width: 80%;
+        text-align: center;
+
+        .logo {
+            margin: 5px;
+        }
+    }
+
+    .copyright {
+        @extend %type-copyright;
+
+        margin-top: 10px;
+    }
+
+    .footer-text {
+        @extend %type-footer;
+    }
+
+    .footer-nav {
+        list-style: none;
+        padding: 0;
+
+        li {
+            @extend %type-footer-links;
+
+            display: inline-block;
+
+            &:after {
+                content: '|';
+                margin-left: 15px;
+                margin-right: 12px; // There is already 3px on the left of the next element
+            }
+
+            &:last-child:after {
+                display: none;
+            }
+        }
+    }
+}

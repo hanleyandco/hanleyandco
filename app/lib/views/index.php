@@ -51,7 +51,7 @@
                     <? if($section->getImage()): ?>
                         <img class="img-thumbnail" src="<?= $staticDir ?>/images/<?= $section->getImage() ?>" />
                     <? endif; ?>
-
+                    
                     <? if($section->getIntro()): ?>
                         <p class="section-intro"><?= $section->getIntro() ?></p>
                     <? endif; ?>
