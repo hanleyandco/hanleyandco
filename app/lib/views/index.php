@@ -43,60 +43,63 @@
 
             <? if($section = $model->getHeaderSection()): ?>
                 <div class="section header-section">
+                    <div class="content">
 
-                    <? if($section->getImage()): ?>
-                        <img class="img-thumbnail" src="<?= $staticDir ?>/images/<?= $section->getImage() ?>" />
-                    <? endif; ?>
+                        <? if($section->getImage()): ?>
+                            <img class="img-thumbnail" src="<?= $staticDir ?>/images/<?= $section->getImage() ?>" />
+                        <? endif; ?>
 
-                    <div class="title">
-                        <h1><?= $section->getTitle() ?></h1>
+                        <div class="title">
+                            <h1><?= $section->getTitle() ?></h1>
+                        </div>
+
+                        <div class="tagLine">
+                            <h4><?= $section->getTagLine() ?></h4>
+                        </div>
+
                     </div>
-
-                    <div class="tagLine">
-                        <h4><?= $section->getTagLine() ?></h4>
-                    </div>
-
                 </div>
             <? endif; ?>
 
             <? foreach($model->getSections() as $section): ?>
                 <div class="section">
+                    <div class="content">
 
-                    <div class="page-header">
-                        <a id="<?=$section->getId() ?>"></a><h2><?= $section->getTitle() ?></h2>
+                        <div class="page-header">
+                            <a id="<?=$section->getId() ?>"></a><h2><?= $section->getTitle() ?></h2>
+                        </div>
+
+                        <? if($section->getImage()): ?>
+                            <img class="img-thumbnail" src="<?= $staticDir ?>/images/<?= $section->getImage() ?>" />
+                        <? endif; ?>
+
+                        <? if($section->getIntro()): ?>
+                            <p class="section-intro"><?= $section->getIntro() ?></p>
+                        <? endif; ?>
+
+                        <? if($section->getParagraphs()): ?>
+                            <? foreach($section->getParagraphs() as $paragraph): ?>
+                                <p><?= $paragraph ?></p>
+                            <? endforeach; ?>
+                        <? endif; ?>
+
+                        <? if($section->getQuotes()): ?>
+                            <? foreach($section->getQuotes() as $quote): ?>
+                                <blockquote class="quote">
+                                    <p class="text"><?= $quote->getText() ?></p>
+                                    <p class="attribution-name"><?= $quote->getName() ?></p>
+                                    <p class="attribution-company"><?= $quote->getCompany() ?></p>
+                                </blockquote>
+                            <? endforeach; ?>
+                        <? endif; ?>
+
+                        <? if($section->getLinks()): ?>
+                            <? foreach($section->getLinks() as $link): ?>
+                                    <a class="external-link" href="<?= $link->getUrl() ?>" title="<?= $link->getTitle() ?>"><?= $link->getText() ?></a>
+                                <br />
+                            <? endforeach; ?>
+                        <? endif; ?>
                     </div>
-
-                    <? if($section->getImage()): ?>
-                        <img class="img-thumbnail" src="<?= $staticDir ?>/images/<?= $section->getImage() ?>" />
-                    <? endif; ?>
-
-                    <? if($section->getIntro()): ?>
-                        <p class="section-intro"><?= $section->getIntro() ?></p>
-                    <? endif; ?>
-
-                    <? if($section->getParagraphs()): ?>
-                        <? foreach($section->getParagraphs() as $paragraph): ?>
-                            <p><?= $paragraph ?></p>
-                        <? endforeach; ?>
-                    <? endif; ?>
-
-                    <? if($section->getQuotes()): ?>
-                        <? foreach($section->getQuotes() as $quote): ?>
-                            <blockquote class="quote">
-                                <p class="text"><?= $quote->getText() ?></p>
-                                <p class="attribution-name"><?= $quote->getName() ?></p>
-                                <p class="attribution-company"><?= $quote->getCompany() ?></p>
-                            </blockquote>
-                        <? endforeach; ?>
-                    <? endif; ?>
-
-                    <? if($section->getLinks()): ?>
-                        <? foreach($section->getLinks() as $link): ?>
-                                <a class="external-link" href="<?= $link->getUrl() ?>" title="<?= $link->getTitle() ?>"><?= $link->getText() ?></a>
-                            <br />
-                        <? endforeach; ?>
-                    <? endif; ?>
-
                 </div>
             <? endforeach; ?>
 
