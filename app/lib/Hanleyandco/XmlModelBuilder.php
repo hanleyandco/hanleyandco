@@ -11,7 +11,7 @@ class XmlModelBuilder implements ModelBuilder {
     public function buildHomepageModel()
     {
         $data = simplexml_load_file(__DIR__.'/../../../static/content/home.xml');
-        $model = new HomepageModel($data->title, $data->sections->section);
+        $model = new HomepageModel($data->title, $data->sections->headerSection, $data->sections->section);
         return $model;
     }
 

@@ -39,7 +39,25 @@
             </div>
         </nav>
 
-        <div class="container theme-showcase" role="main">
+        <div class="theme-showcase" role="main">
+
+            <? if($section = $model->getHeaderSection()): ?>
+                <div class="section header-section">
+
+                    <? if($section->getImage()): ?>
+                        <img class="img-thumbnail" src="<?= $staticDir ?>/images/<?= $section->getImage() ?>" />
+                    <? endif; ?>
+
+                    <div class="title">
+                        <h1><?= $section->getTitle() ?></h1>
+                    </div>
+
+                    <div class="tagLine">
+                        <h4><?= $section->getTagLine() ?></h4>
+                    </div>
+
+                </div>
+            <? endif; ?>
 
             <? foreach($model->getSections() as $section): ?>
                 <div class="section">

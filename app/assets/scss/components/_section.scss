@@ -1,5 +1,6 @@
 .section {
     clear: both;
+    padding: 16px;
     text-align: center;
 
     img {
@@ -40,4 +41,23 @@
         }
     }
 
+    &:nth-child(even) {
+        background:#f3f3f3;
+
+        .page-header {
+            border-bottom: 1px solid #ddd;
+        }
+
+        blockquote {
+            border-left: 5px solid #ddd;
+        }
+    }
+}
+
+.header-section {
+    background: #00008b;
+    padding-top:40px;
+    padding-bottom:40px;
+
+    color: #f5f5f5;
 }

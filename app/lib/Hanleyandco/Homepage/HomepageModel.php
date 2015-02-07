@@ -7,11 +7,19 @@ use Hanleyandco\Util;
 class HomepageModel {
 
     private $_title;
+    private $_headerSection;
     private $_sections;
 
-    public function __construct($title, $sections)
+    public function __construct($title, $headerSection, $sections)
     {
         $this->_title = $title;
+
+        $this->_headerSection = new HeaderSectionModel(
+            $headerSection->title,
+            $headerSection->image,
+            $headerSection->tagLine
+        );
+
         foreach($sections as $section) {
             $this->_sections[] = new SectionModel($section->header, $section->content);
         }
@@ -24,11 +32,57 @@ class HomepageModel {
     /**
      * @return mixed
      */
+    public function getHeaderSection()
+    {
+        return $this->_headerSection;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getSections()
     {
         return $this->_sections;
     }
 
+}
+
+class HeaderSectionModel {
+
+    private $_title;
+    private $_image;
+    private $_tagLine;
+
+    public function __construct($title, $image, $tagLine)
+    {
+        $this->_title = $title;
+        $this->_image = $image;
+        $this->_tagLine = $tagLine;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->_image;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTagLine()
+    {
+        return $this->_tagLine;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->_title;
+    }
 }
 
 class SectionModel {
