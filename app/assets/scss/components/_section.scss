@@ -24,4 +24,20 @@
         @extend %type-paragraph-intro;
     }
 
+    a.external-link {
+        @extend %type-paragraph;
+
+        background: #e3e3e3;
+        color: #000;
+        display: inline-block;
+        margin: auto;
+        margin-top: 16px;
+        padding: 12px 18px;
+        text-align: center;
+
+        &:hover {
+            background: #d3d3d3;
+        }
+    }
+
 }

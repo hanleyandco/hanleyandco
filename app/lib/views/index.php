@@ -51,7 +51,7 @@
                     <? if($section->getImage()): ?>
                         <img class="img-thumbnail" src="<?= $staticDir ?>/images/<?= $section->getImage() ?>" />
                     <? endif; ?>
-                    
+
                     <? if($section->getIntro()): ?>
                         <p class="section-intro"><?= $section->getIntro() ?></p>
                     <? endif; ?>
@@ -69,6 +69,12 @@
                                 <p class="attribution-name"><?= $quote->getName() ?></p>
                                 <p class="attribution-company"><?= $quote->getCompany() ?></p>
                             </blockquote>
+                        <? endforeach; ?>
+                    <? endif; ?>
+
+                    <? if($section->getLinks()): ?>
+                        <? foreach($section->getLinks() as $link): ?>
+                            <a class="external-link" href="<?= $link->getUrl() ?>" title="<?= $link->getTitle() ?>"><?= $link->getText() ?></a>
                         <? endforeach; ?>
                     <? endif; ?>
 

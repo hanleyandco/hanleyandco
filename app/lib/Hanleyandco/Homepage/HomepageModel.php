@@ -39,6 +39,7 @@ class SectionModel {
     private $_paragraphs;
     private $_intro;
     private $_quotes;
+    private $_links;
 
     public function __construct($title, $content) {
         $this->_title = $title;
@@ -50,6 +51,12 @@ class SectionModel {
         foreach($content->quote as $quote) {
             $this->_quotes[] = new QuoteModel(
                 $quote->text, $quote->attribution->name, $quote->attribution->company
+            );
+        }
+
+        foreach($content->link as $link) {
+            $this->_links[] = new LinkModel(
+                $link->title, $link->text, $link->url
             );
         }
     }
@@ -101,6 +108,14 @@ class SectionModel {
     {
         return $this->_quotes;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getLinks()
+    {
+        return $this->_links;
+    }
 }
 
 class QuoteModel {
@@ -139,4 +154,41 @@ class QuoteModel {
         return $this->_company;
     }
 
+}
+
+class LinkModel {
+
+    private $_title;
+    private $_text;
+    private $_url;
+
+    public function  __construct($title, $text, $url) {
+        $this->_title = $title;
+        $this->_text = $text;
+        $this->_url = $url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getText()
+    {
+        return $this->_text;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->_title;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUrl()
+    {
+        return $this->_url;
+    }
 }
