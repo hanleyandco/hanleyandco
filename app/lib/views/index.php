@@ -74,7 +74,8 @@
 
                     <? if($section->getLinks()): ?>
                         <? foreach($section->getLinks() as $link): ?>
-                            <a class="external-link" href="<?= $link->getUrl() ?>" title="<?= $link->getTitle() ?>"><?= $link->getText() ?></a>
+                                <a class="external-link" href="<?= $link->getUrl() ?>" title="<?= $link->getTitle() ?>"><?= $link->getText() ?></a>
+                            <br />
                         <? endforeach; ?>
                     <? endif; ?>
 
