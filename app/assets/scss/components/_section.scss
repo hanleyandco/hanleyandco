@@ -26,14 +26,15 @@
     }
 
     a.external-link {
-        @extend %type-paragraph;
+        @extend %type-paragraph-intro;
 
         background: #e3e3e3;
         color: #000;
         display: inline-block;
         margin: auto;
+        margin-bottom: 8px;
         margin-top: 16px;
-        padding: 12px 18px;
+        padding: 16px 24px;
         text-align: center;
 
         &:hover {
@@ -41,7 +42,7 @@
         }
     }
 
-    &:nth-child(even) {
+    &:nth-child(odd) {
         background:#f3f3f3;
 
         .page-header {
@@ -54,7 +55,7 @@
     }
 }
 
-.header-section {
+.header-section:nth-child(1) {
     background: #00008b;
     padding-top:40px;
     padding-bottom:40px;
