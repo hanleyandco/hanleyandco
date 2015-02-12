@@ -58,3 +58,27 @@ body {
 
     font-weight: bold;
 }
+
+%type-quote-text {
+    @extend %type;
+
+    font-size: 4rem;
+    font-style: italic;
+    font-weight: lighter;
+    line-height: 4.4rem;
+}
+
+%type-quote-attribution-name {
+    @extend %type;
+
+    font-size: 2.2rem;
+    font-weight: normal;
+    line-height: 2.6rem;
+}
+
+%type-quote-attribution-company {
+    @extend %type;
+
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+}

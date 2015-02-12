@@ -91,3 +91,30 @@
         @extend %type-header;
     }
 }
+
+.quote {
+    background: #2c73c3;
+    padding: 16px;
+
+    .text {
+        @extend %type-quote-text;
+
+        color: #fff;
+        text-align: right;
+    }
+
+    .attribution-name {
+        @extend %type-quote-attribution-name;
+
+        color: #fff;
+        margin-bottom:0;
+        text-align: left;
+    }
+
+    .attribution-company {
+        @extend %type-quote-attribution-company;
+
+        color: #fff;
+        text-align: left;
+    }
+}

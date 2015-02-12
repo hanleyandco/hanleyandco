@@ -83,14 +83,6 @@
                             <? endforeach; ?>
                         <? endif; ?>
 
-                        <? if($section->getQuote()): ?>
-                            <blockquote class="quote">
-                                <p class="text"><?= $section->getQuote()->getText() ?></p>
-                                <p class="attribution-name"><?= $section->getQuote()->getName() ?></p>
-                                <p class="attribution-company"><?= $section->getQuote()->getCompany() ?></p>
-                            </blockquote>
-                        <? endif; ?>
-
                         <? if($section->getLinks()): ?>
                             <? foreach($section->getLinks() as $link): ?>
                                     <a class="external-link" href="<?= $link->getUrl() ?>" title="<?= $link->getTitle() ?>"><?= $link->getText() ?></a>
@@ -99,6 +91,13 @@
                         <? endif; ?>
                     </div>
                 </div>
+                <? if($section->getQuote()): ?>
+                    <div class="quote">
+                        <p class="text">"<?= $section->getQuote()->getText() ?>"</p>
+                        <p class="attribution-name"><?= $section->getQuote()->getName() ?></p>
+                        <p class="attribution-company"><?= $section->getQuote()->getCompany() ?></p>
+                    </div>
+                <? endif; ?>
             <? endforeach; ?>
 
         </div> <!-- /container -->
