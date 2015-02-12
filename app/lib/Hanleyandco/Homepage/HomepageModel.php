@@ -92,7 +92,7 @@ class SectionModel {
     private $_image;
     private $_paragraphs;
     private $_intro;
-    private $_quotes;
+    private $_quote;
     private $_links;
 
     public function __construct($title, $content) {
@@ -101,10 +101,9 @@ class SectionModel {
         $this->_image = $content->image;
         $this->_intro = $content->intro;
         $this->_paragraphs = $content->paragraph;
-
-        foreach($content->quote as $quote) {
-            $this->_quotes[] = new QuoteModel(
-                $quote->text, $quote->attribution->name, $quote->attribution->company
+        if ($content->quote) {
+            $this->_quote = new QuoteModel(
+                $content->quote->text, $content->quote->attribution->name, $content->quote->attribution->company
             );
         }
 
@@ -158,9 +157,9 @@ class SectionModel {
     /**
      * @return mixed
      */
-    public function getQuotes()
+    public function getQuote()
     {
-        return $this->_quotes;
+        return $this->_quote;
     }
 
     /**

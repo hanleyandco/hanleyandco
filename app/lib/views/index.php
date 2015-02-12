@@ -83,14 +83,12 @@
                             <? endforeach; ?>
                         <? endif; ?>
 
-                        <? if($section->getQuotes()): ?>
-                            <? foreach($section->getQuotes() as $quote): ?>
-                                <blockquote class="quote">
-                                    <p class="text"><?= $quote->getText() ?></p>
-                                    <p class="attribution-name"><?= $quote->getName() ?></p>
-                                    <p class="attribution-company"><?= $quote->getCompany() ?></p>
-                                </blockquote>
-                            <? endforeach; ?>
+                        <? if($section->getQuote()): ?>
+                            <blockquote class="quote">
+                                <p class="text"><?= $section->getQuote()->getText() ?></p>
+                                <p class="attribution-name"><?= $section->getQuote()->getName() ?></p>
+                                <p class="attribution-company"><?= $section->getQuote()->getCompany() ?></p>
+                            </blockquote>
                         <? endif; ?>
 
                         <? if($section->getLinks()): ?>
