@@ -54,22 +54,6 @@
             border-left: 5px solid #ddd;
         }
     }
-
-    .content {
-        margin: auto;
-
-        @include tablet() {
-            max-width: 768px;
-        }
-
-        @include desktop() {
-            max-width: 900px;
-        }
-
-        @include widescreen() {
-            max-width: 1200px;
-        }
-    }
 }
 
 .header-section:nth-child(1) {
@@ -116,5 +100,23 @@
 
         color: #fff;
         text-align: left;
+    }
+}
+
+.section, .quote {
+    .content {
+        margin: auto;
+
+        @include tablet() {
+            max-width: 768px;
+        }
+
+        @include desktop() {
+            max-width: 900px;
+        }
+
+        @include widescreen() {
+            max-width: 1200px;
+        }
     }
 }

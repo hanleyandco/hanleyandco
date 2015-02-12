@@ -93,9 +93,11 @@
                 </div>
                 <? if($section->getQuote()): ?>
                     <div class="quote">
-                        <p class="text">"<?= $section->getQuote()->getText() ?>"</p>
-                        <p class="attribution-name"><?= $section->getQuote()->getName() ?></p>
-                        <p class="attribution-company"><?= $section->getQuote()->getCompany() ?></p>
+                        <div class="content">
+                            <p class="text">"<?= $section->getQuote()->getText() ?>"</p>
+                            <p class="attribution-name"><?= $section->getQuote()->getName() ?></p>
+                            <p class="attribution-company"><?= $section->getQuote()->getCompany() ?></p>
+                        </div>
                     </div>
                 <? endif; ?>
             <? endforeach; ?>
