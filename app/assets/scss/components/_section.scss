@@ -18,10 +18,11 @@
     }
 
     h2 {
+        @extend %type;
         text-align: left;
     }
 
-    .section-intro {
+    p.section-intro {
         @extend %type-paragraph-intro;
     }
 
@@ -84,5 +85,9 @@
             float: none;
         }
 
+    }
+
+    .title h1, .tagLine h2 {
+        @extend %type-header;
     }
 }

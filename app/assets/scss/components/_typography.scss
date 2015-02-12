@@ -6,30 +6,49 @@ body {
     font-size: 100%;
 }
 
+%type {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-weight:lighter;
+}
+
 %type-navBar-link {
+    @extend %type;
+
     font-size: 1.6rem;
 }
 
+%type-header {
+    @extend %type;
+}
+
 %type-paragraph {
+    @extend %type;
+
     font-size: 1.6rem;
     line-height: 2.2rem;
     text-align: justify;
 }
 
 %type-paragraph-intro {
+    @extend %type;
+
     font-size: 1.8rem;
-    font-weight: bold;
+    font-weight: normal;
     line-height: 2.4rem;
     text-align: justify;
 }
 
 %type-copyright {
+    @extend %type;
+
     font-size: 1.4rem;
     font-weight: bold;
     line-height: 2.2rem;
 }
 
 %type-footer {
+    @extend %type;
+
     font-size: 1.2rem;
     line-height: 1.8rem;
 }
