@@ -30,7 +30,7 @@ class XmlModelBuilder implements ModelBuilder {
     public function buildFooter()
     {
         $data = simplexml_load_file(__DIR__.'/../../../static/content/footer.xml');
-        $model = new FooterModel($data->links->link, $data->text->line, $data->images->image, $data->copyright);
+        $model = new FooterModel($data->links->link, $data->text->line, $data->images->image, $data->copyright, $data->registeredOffice);
         return $model;
     }
 }

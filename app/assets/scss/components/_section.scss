@@ -71,8 +71,20 @@
 
     }
 
-    .title h1, .tagLine h2 {
-        @extend %type-header;
+    .title h1 {
+        @extend %type-header-title;
+    }
+
+    .subTitle h3 {
+        @extend %type-header-subTitle;
+
+        margin-top: 0;
+    }
+
+    .tagLine h4 {
+        @extend %type-header-tagLine;
+
+        margin-bottom: 16px;
     }
 }
 

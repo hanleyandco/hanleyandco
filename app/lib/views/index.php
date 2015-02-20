@@ -14,7 +14,7 @@
 
     </head>
 
-    <body role="document">
+    <body role="document" itemscope itemtype="http://schema.org/LocalBusiness">
 
         <!-- Fixed navbar -->
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -45,17 +45,21 @@
                 <div class="section header-section">
                     <div class="content">
 
-                        <? if($section->getImage()): ?>
-                            <img class="img-thumbnail" src="<?= $staticDir ?>/images/<?= $section->getImage() ?>" />
-                        <? endif; ?>
-
                         <div class="title">
-                            <h1><?= $section->getTitle() ?></h1>
+                            <h1 itemprop="name"><?= $section->getTitle() ?></h1>
+                        </div>
+
+                        <div class="subTitle">
+                            <h3 itemprop="description"><?= $section->getSubTitle() ?></h3>
                         </div>
 
                         <div class="tagLine">
                             <h4><?= $section->getTagLine() ?></h4>
                         </div>
+
+                        <? if($section->getImage()): ?>
+                            <img class="img-thumbnail" src="<?= $staticDir ?>/images/<?= $section->getImage() ?>" itemprop="<?= $staticDir ?>/images/<?= $section->getImage() ?>"/>
+                        <? endif; ?>
 
                     </div>
                 </div>
@@ -119,6 +123,10 @@
 
             <? if($footer->getText()): ?>
                 <p class="footer-text">
+                <? if($footer->getRegisteredOffice()): ?>
+                    Registered Address: <?= $footer->getRegisteredOffice() ?><br />
+                <? endif; ?>
+
                     <? foreach($footer->getText() as $line): ?>
                         <?= $line ?><br />
                     <? endforeach; ?>

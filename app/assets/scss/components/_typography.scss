@@ -17,8 +17,22 @@ body {
     font-size: 1.6rem;
 }
 
-%type-header {
+%type-header-title {
+    font-family: "Times New Roman", Georgia, Times, serif;
+    font-size: 5rem;
+    font-weight:normal;
+}
+
+%type-header-subTitle {
+    @extend %type-header-title;
+
+    font-size: 3rem;
+}
+
+%type-header-tagLine {
     @extend %type;
+
+    font-style: italic;
 }
 
 %type-paragraph {

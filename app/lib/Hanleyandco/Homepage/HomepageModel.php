@@ -17,6 +17,7 @@ class HomepageModel {
         $this->_headerSection = new HeaderSectionModel(
             $headerSection->title,
             $headerSection->image,
+            $headerSection->subTitle,
             $headerSection->tagLine
         );
 
@@ -52,11 +53,13 @@ class HeaderSectionModel {
     private $_title;
     private $_image;
     private $_tagLine;
+    private $_subTitle;
 
-    public function __construct($title, $image, $tagLine)
+    public function __construct($title, $image, $subTitle, $tagLine)
     {
         $this->_title = $title;
         $this->_image = $image;
+        $this->_subTitle = $subTitle;
         $this->_tagLine = $tagLine;
     }
 
@@ -82,6 +85,14 @@ class HeaderSectionModel {
     public function getTitle()
     {
         return $this->_title;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSubTitle()
+    {
+        return $this->_subTitle;
     }
 }
 

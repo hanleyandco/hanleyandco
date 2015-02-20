@@ -753,16 +753,16 @@
         },
         {
             "name": "xepps/hanleyandco-content",
-            "version": "0.10.0",
+            "version": "0.10.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hanleyandco/hanleyandco-content.git",
-                "reference": "fd1043ad475a611debc7425f1b4fbfa1d5286c12"
+                "reference": "68f37907e57654eac3e0f4a8a4c8ce45442356f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hanleyandco/hanleyandco-content/zipball/fd1043ad475a611debc7425f1b4fbfa1d5286c12",
-                "reference": "fd1043ad475a611debc7425f1b4fbfa1d5286c12",
+                "url": "https://api.github.com/repos/hanleyandco/hanleyandco-content/zipball/68f37907e57654eac3e0f4a8a4c8ce45442356f3",
+                "reference": "68f37907e57654eac3e0f4a8a4c8ce45442356f3",
                 "shasum": ""
             },
             "type": "library",
@@ -773,7 +773,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "Hanley and Co Chartered Accountants Website Content",
-            "time": "2015-02-07 14:23:31"
+            "time": "2015-02-12 11:28:23"
         }
     ],
     "packages-dev": [
@@ -809,7 +809,7 @@
             ],
             "authors": [
                 {
-                    "name": "Padraic Brady",
+                    "name": "Pádraic Brady",
                     "email": "padraic.brady@gmail.com",
                     "homepage": "http://blog.astrumfutura.com"
                 }
