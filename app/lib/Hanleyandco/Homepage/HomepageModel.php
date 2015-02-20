@@ -105,6 +105,7 @@ class SectionModel {
     private $_intro;
     private $_quote;
     private $_links;
+    private $_contact;
 
     public function __construct($title, $content) {
         $this->_title = $title;
@@ -114,7 +115,18 @@ class SectionModel {
         $this->_paragraphs = $content->paragraph;
         if ($content->quote) {
             $this->_quote = new QuoteModel(
-                $content->quote->text, $content->quote->attribution->name, $content->quote->attribution->company
+                $content->quote->text,
+                $content->quote->attribution->name,
+                $content->quote->attribution->company
+            );
+        }
+
+        if ($content->contact) {
+            $this->_contact = new ContactModel(
+                $content->contact->telephone,
+                $content->contact->email,
+                $content->contact->openingHours->text,
+                $content->contact->openingHours->schema
             );
         }
 
@@ -179,6 +191,14 @@ class SectionModel {
     public function getLinks()
     {
         return $this->_links;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContact()
+    {
+        return $this->_contact;
     }
 }
 
@@ -254,5 +274,52 @@ class LinkModel {
     public function getUrl()
     {
         return $this->_url;
+    }
+}
+
+class ContactModel {
+
+    private $_telephone;
+    private $_email;
+    private $_openingHoursText;
+    private $_openingHoursSchema;
+
+    public function __construct($telephone, $email, $openingHoursText, $openingHoursSchema) {
+        $this->_telephone = $telephone;
+        $this->_email = $email;
+        $this->_openingHoursSchema = $openingHoursSchema;
+        $this->_openingHoursText = $openingHoursText;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->_email;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOpeningHoursSchema()
+    {
+        return $this->_openingHoursSchema;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOpeningHoursText()
+    {
+        return $this->_openingHoursText;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTelephone()
+    {
+        return $this->_telephone;
     }
 }

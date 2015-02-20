@@ -76,10 +76,10 @@ body {
 %type-quote-text {
     @extend %type;
 
-    font-size: 4rem;
+    font-size: 3rem;
     font-style: italic;
     font-weight: lighter;
-    line-height: 4.4rem;
+    line-height: 3.4rem;
 }
 
 %type-quote-attribution-name {

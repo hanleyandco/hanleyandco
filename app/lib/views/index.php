@@ -93,6 +93,15 @@
                                 <br />
                             <? endforeach; ?>
                         <? endif; ?>
+
+                        <? if($section->getContact()): ?>
+                            <? $contact = $section->getContact(); ?>
+                            <p>
+                                Open <time itemprop="openingHours" datetime="<?= $contact->getOpeningHoursSchema() ?>"><?= $contact->getOpeningHoursText() ?></time>
+                            </p>
+                            <a class="external-link" itemprop="telephone" href="tel://<?= $contact->getTelephone() ?>"><?= $contact->getTelephone() ?></a>
+                            <a class="external-link" itemprop="email" href="mailto:<?= $contact->getEmail() ?>"><?= $contact->getEmail() ?></a>
+                        <? endif; ?>
                     </div>
                 </div>
                 <? if($section->getQuote()): ?>
@@ -124,7 +133,7 @@
             <? if($footer->getText()): ?>
                 <p class="footer-text">
                 <? if($footer->getRegisteredOffice()): ?>
-                    Registered Address: <?= $footer->getRegisteredOffice() ?><br />
+                    <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">Registered Address: <span itemprop="streetAddress"><?= $footer->getRegisteredOffice() ?></span></span><br />
                 <? endif; ?>
 
                     <? foreach($footer->getText() as $line): ?>
