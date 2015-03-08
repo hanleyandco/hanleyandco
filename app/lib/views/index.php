@@ -43,6 +43,11 @@
 
             <? if($section = $model->getHeaderSection()): ?>
                 <div class="section header-section">
+                    <? if($section->getImage()): ?>
+                        <div class="header-background" style="background-image: url('<?= $staticDir ?>/images/<?= $section->getImage() ?>')" ></div>
+                        <div class="header-background"></div>
+                    <? endif; ?>
+
                     <div class="content">
 
                         <div class="title">
@@ -57,9 +62,6 @@
                             <h4><?= $section->getTagLine() ?></h4>
                         </div>
 
-                        <? if($section->getImage()): ?>
-                            <img class="img-thumbnail" src="<?= $staticDir ?>/images/<?= $section->getImage() ?>" itemprop="<?= $staticDir ?>/images/<?= $section->getImage() ?>"/>
-                        <? endif; ?>
 
                     </div>
                 </div>
