@@ -7,12 +7,15 @@ use Hanleyandco\Util;
 class HomepageModel {
 
     private $_title;
+    private $_description;
     private $_headerSection;
     private $_sections;
 
-    public function __construct($title, $headerSection, $sections)
+    public function __construct($title, $description, $headerSection, $sections)
     {
         $this->_title = $title;
+
+        $this->_description = $description;
 
         $this->_headerSection = new HeaderSectionModel(
             $headerSection->title,
@@ -28,6 +31,10 @@ class HomepageModel {
 
     public function getTitle() {
         return $this->_title;
+    }
+
+    public function getDescription() {
+        return $this->_description;
     }
 
     /**

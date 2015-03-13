@@ -20,6 +20,7 @@
     h2 {
         @extend %type;
         text-align: left;
+        text-transform: capitalize;
     }
 
     p.section-intro {
@@ -37,10 +38,15 @@
         margin-top: 16px;
         padding: 16px 24px;
         text-align: center;
+        text-transform: capitalize;
 
         &:hover {
             background: #2c73c3;
             color: #fff;
+        }
+
+        &.email {
+            text-transform: lowercase;
         }
     }
 
@@ -82,18 +88,23 @@
 
         .title h1 {
             @extend %type-header-title;
+
+            text-transform: capitalize;
         }
 
         .subTitle h3 {
             @extend %type-header-subTitle;
 
             margin-top: 0;
+            text-transform: capitalize;
+
         }
 
         .tagLine h4 {
             @extend %type-header-tagLine;
 
             margin-bottom: 16px;
+            text-transform: capitalize;
         }
     }
     
@@ -115,7 +126,7 @@
         @extend %type-quote-text;
 
         color: #fff;
-        text-align: right;
+        text-align: left;
     }
 
     .attribution-name {
@@ -123,14 +134,14 @@
 
         color: #fff;
         margin-bottom:0;
-        text-align: left;
+        text-align: right;
     }
 
     .attribution-company {
         @extend %type-quote-attribution-company;
 
         color: #fff;
-        text-align: left;
+        text-align: right;
     }
 }
 

@@ -1,6 +1,7 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="Description" content="<?= $model->getDescription() ?>">
         <title><?= $model->getTitle() ?></title>
         <link rel="stylesheet" type="text/css" href="<?= $staticDir; ?>/css/vendor/bootstrap/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="<?= $staticDir; ?>/css/vendor/bootstrap/bootstrap-theme.min.css">
@@ -14,7 +15,10 @@
 
     </head>
 
-    <body role="document" itemscope itemtype="http://schema.org/LocalBusiness">
+    <body role="document" itemscope itemtype="http://schema.org/AccountingService">
+
+        <meta itemprop="currenciesAccepted" content="GBP" />
+        <meta itemprop="paymentAccepted" content="Cash, Credit Card, Cheque, Bank Transfer" />
 
         <!-- Fixed navbar -->
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -101,17 +105,19 @@
                             <p>
                                 Open <time itemprop="openingHours" datetime="<?= $contact->getOpeningHoursSchema() ?>"><?= $contact->getOpeningHoursText() ?></time>
                             </p>
-                            <a class="external-link" itemprop="telephone" href="tel://<?= $contact->getTelephone() ?>"><?= $contact->getTelephone() ?></a>
-                            <a class="external-link" itemprop="email" href="mailto:<?= $contact->getEmail() ?>"><?= $contact->getEmail() ?></a>
+                            <a class="external-link" href="tel://<?= $contact->getTelephone() ?>"><span itemprop="telephone"><?= $contact->getTelephone() ?></span></a>
+                            <a class="external-link email" href="mailto:<?= $contact->getEmail() ?>"><span itemprop="email"><?= $contact->getEmail() ?></span></a>
                         <? endif; ?>
                     </div>
                 </div>
                 <? if($section->getQuote()): ?>
-                    <div class="quote">
+                    <div class="quote" itemprop="review" itemscope itemtype="http://schema.org/Review">
                         <div class="content">
-                            <p class="text">"<?= $section->getQuote()->getText() ?>"</p>
-                            <p class="attribution-name"><?= $section->getQuote()->getName() ?></p>
-                            <p class="attribution-company"><?= $section->getQuote()->getCompany() ?></p>
+                            <p class="text" itemprop="reviewBody">"<?= $section->getQuote()->getText() ?>"</p>
+                            <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                <p class="attribution-name" itemprop="name"><?= $section->getQuote()->getName() ?></p>
+                                <p class="attribution-company" itemprop="owns"><?= $section->getQuote()->getCompany() ?></p>
+                            </div>
                         </div>
                     </div>
                 <? endif; ?>
@@ -121,9 +127,12 @@
 
         <footer>
             <div class="images">
-                <? if($footer->getImages()): ?>
-                    <? foreach($footer->getImages() as $image) : ?>
-                        <img class="img-thumbnail logo" src="<?= $staticDir ?>/images/<?= $image ?>" />
+                <? if($footer->getOrganisations()): ?>
+                    <? foreach($footer->getOrganisations() as $organisation) : ?>
+                        <div itemprop="memberOf" itemscope itemtype="http://schema.org/Organization">
+                            <meta itemprop="name" content="<?= $organisation->getName() ?>" />
+                            <img class="img-thumbnail logo" itemprop="logo" src="<?= $staticDir ?>/images/<?= $organisation->getLogo() ?>" />
+                        </div>
                     <? endforeach; ?>
                 <? endif; ?>
             </div>
@@ -135,7 +144,13 @@
             <? if($footer->getText()): ?>
                 <p class="footer-text">
                 <? if($footer->getRegisteredOffice()): ?>
-                    <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">Registered Address: <span itemprop="streetAddress"><?= $footer->getRegisteredOffice() ?></span></span><br />
+                    <? $address = $footer->getRegisteredOffice() ?>
+                    <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                        Registered Address:
+                        <span itemprop="streetAddress"><?= $address->getStreet() ?></span>,
+                        <span itemprop="addressLocality"><?= $address->getTown() ?></span>,
+                        <span itemprop="postalCode"><?= $address->getPostcode() ?></span>
+                    </span><br />
                 <? endif; ?>
 
                     <? foreach($footer->getText() as $line): ?>

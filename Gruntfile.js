@@ -182,8 +182,8 @@ module.exports = function(grunt) {
         'default',
         [
             'install-deps',
-            'build-assets-dist',
-            'run-tests'
+            'build-assets-dist'
+//            'run-tests'
         ]
     );
 

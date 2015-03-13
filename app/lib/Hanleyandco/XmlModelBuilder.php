@@ -11,7 +11,7 @@ class XmlModelBuilder implements ModelBuilder {
     public function buildHomepageModel()
     {
         $data = simplexml_load_file(__DIR__.'/../../../static/content/home.xml');
-        $model = new HomepageModel($data->title, $data->sections->headerSection, $data->sections->section);
+        $model = new HomepageModel($data->title, $data->description, $data->sections->headerSection, $data->sections->section);
         return $model;
     }
 
@@ -30,7 +30,7 @@ class XmlModelBuilder implements ModelBuilder {
     public function buildFooter()
     {
         $data = simplexml_load_file(__DIR__.'/../../../static/content/footer.xml');
-        $model = new FooterModel($data->links->link, $data->text->line, $data->images->image, $data->copyright, $data->registeredOffice);
+        $model = new FooterModel($data->links->link, $data->text->line, $data->memberOf->organisation, $data->copyright, $data->registeredOffice);
         return $model;
     }
 }
