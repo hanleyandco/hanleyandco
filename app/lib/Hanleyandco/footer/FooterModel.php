@@ -8,9 +8,9 @@ class FooterModel {
     private $_text;
     private $_organisations;
     private $_copyright;
-    private $_registeredOffice;
+    private $_registeredOffices;
 
-    public function __construct($links, $text, $memberOf, $copyright, $registeredOffice) {
+    public function __construct($links, $text, $memberOf, $copyright, $offices) {
         $this->_links = $links;
         $this->_text = $text;
         foreach($memberOf as $organisation) {
@@ -20,9 +20,12 @@ class FooterModel {
         }
         $this->organisations = $memberOf;
         $this->_copyright = "&copy; " . date("Y") . " " . $copyright;
-        $this->_registeredOffice = new Address(
-            $registeredOffice->street, $registeredOffice->town, $registeredOffice->postcode
-        );
+
+        foreach($offices->registeredOffice as $office) {
+            $this->_registeredOffices []= new Address(
+                $office->street, $office->town, $office->postcode
+            );
+        }
     }
 
     public function getLinks() {
@@ -41,8 +44,8 @@ class FooterModel {
         return $this->_copyright;
     }
 
-    public function getRegisteredOffice() {
-        return $this->_registeredOffice;
+    public function getRegisteredOffices() {
+        return $this->_registeredOffices;
     }
 }
 

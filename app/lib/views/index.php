@@ -47,11 +47,6 @@
 
             <? if($section = $model->getHeaderSection()): ?>
                 <div class="section header-section">
-                    <? if($section->getImage()): ?>
-                        <div class="header-background" style="background-image: url('<?= $staticDir ?>/images/<?= $section->getImage() ?>')" ></div>
-                        <div class="header-background"></div>
-                    <? endif; ?>
-
                     <div class="content">
 
                         <div class="title">
@@ -105,7 +100,11 @@
                             <p>
                                 Open <time itemprop="openingHours" datetime="<?= $contact->getOpeningHoursSchema() ?>"><?= $contact->getOpeningHoursText() ?></time>
                             </p>
-                            <a class="external-link" href="tel://<?= $contact->getTelephone() ?>"><span itemprop="telephone"><?= $contact->getTelephone() ?></span></a>
+                            <? foreach($contact->getTelephoneNumbers() as $number): ?>
+                                <a class="external-link" href="tel://<?= $number ?>">
+                                    <span itemprop="telephone"><?= $number ?></span>
+                                </a>
+                            <? endforeach; ?>
                             <a class="external-link email" href="mailto:<?= $contact->getEmail() ?>"><span itemprop="email"><?= $contact->getEmail() ?></span></a>
                         <? endif; ?>
                     </div>
@@ -143,14 +142,14 @@
 
             <? if($footer->getText()): ?>
                 <p class="footer-text">
-                <? if($footer->getRegisteredOffice()): ?>
-                    <? $address = $footer->getRegisteredOffice() ?>
-                    <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                        Registered Address:
-                        <span itemprop="streetAddress"><?= $address->getStreet() ?></span>,
-                        <span itemprop="addressLocality"><?= $address->getTown() ?></span>,
-                        <span itemprop="postalCode"><?= $address->getPostcode() ?></span>
-                    </span><br />
+                <? if($footer->getRegisteredOffices()): ?>
+                    <? foreach ($footer->getRegisteredOffices() as $office): ?>
+                        <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                            <span itemprop="streetAddress"><?= $office->getStreet() ?></span>,
+                            <span itemprop="addressLocality"><?= $office->getTown() ?></span>,
+                            <span itemprop="postalCode"><?= $office->getPostcode() ?></span>
+                        </span><br />
+                    <? endforeach; ?>
                 <? endif; ?>
 
                     <? foreach($footer->getText() as $line): ?>

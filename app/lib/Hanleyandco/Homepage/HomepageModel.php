@@ -286,13 +286,13 @@ class LinkModel {
 
 class ContactModel {
 
-    private $_telephone;
+    private $_telephoneNumbers;
     private $_email;
     private $_openingHoursText;
     private $_openingHoursSchema;
 
     public function __construct($telephone, $email, $openingHoursText, $openingHoursSchema) {
-        $this->_telephone = $telephone;
+        $this->_telephoneNumbers = $telephone;
         $this->_email = $email;
         $this->_openingHoursSchema = $openingHoursSchema;
         $this->_openingHoursText = $openingHoursText;
@@ -325,8 +325,8 @@ class ContactModel {
     /**
      * @return mixed
      */
-    public function getTelephone()
+    public function getTelephoneNumbers()
     {
-        return $this->_telephone;
+        return $this->_telephoneNumbers;
     }
 }
