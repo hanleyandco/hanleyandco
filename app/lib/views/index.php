@@ -133,6 +133,8 @@
         </div> <!-- /container -->
 
         <footer>
+            <h3>Hanley &amp; Co</h3>
+            <h4>Accountants You Can Talk To</h4>
             <div class="images">
                 <? if($footer->getOrganisations()): ?>
                     <? foreach($footer->getOrganisations() as $organisation) : ?>
