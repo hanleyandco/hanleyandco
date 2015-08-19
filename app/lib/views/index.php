@@ -109,7 +109,7 @@
                                 Open <time itemprop="openingHours" datetime="<?= $contact->getOpeningHoursSchema() ?>"><?= $contact->getOpeningHoursText() ?></time>
                             </p>
                             <? foreach($contact->getTelephoneNumbers() as $number): ?>
-                                <a class="external-link" href="tel://<?= $number ?>">
+                                <a class="external-link" href="tel://<?= str_replace(' ', '', $number) ?>">
                                     <span itemprop="telephone"><?= $number ?></span>
                                 </a>
                             <? endforeach; ?>
