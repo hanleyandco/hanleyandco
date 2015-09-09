@@ -6,6 +6,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-contrib-watch');
@@ -88,6 +89,28 @@ module.exports = function(grunt) {
                 cwd: "node_modules/requirejs/",
                 src: "require.js",
                 dest: "static/js/vendor/requirejs/"
+            },
+            release: {
+                expand: true,
+                src: ["app/lib/**", "static/**", "vendor/**", ".htaccess", "package.json", "composer.json"],
+                dest: "release/"
+            }
+        },
+        clean: {
+            staticContent: {
+                src: ["static/content"]
+            },
+            staticCss: {
+                src: ["static/css"]
+            },
+            staticImages: {
+                src: ["static/images"]
+            },
+            staticJs: {
+                src: ["static/js"]
+            },
+            releaseFiles: {
+                src: ["release"]
             }
         },
         jshint: {
@@ -199,6 +222,7 @@ module.exports = function(grunt) {
     grunt.registerTask(
         'install-deps',
         [
+            'composer:update',
             'composer:install',
             'bundle',
             'install-bootstrap',
@@ -250,5 +274,13 @@ module.exports = function(grunt) {
         ]
     );
 
+    grunt.registerTask(
+        'release',
+        [
+            'default',
+            'clean:releaseFiles',
+            'copy:release'
+        ]
+    );
 
 };

@@ -48,17 +48,25 @@
             <? if($section = $model->getHeaderSection()): ?>
                 <div class="section header-section">
                     <div class="content">
+                        <div class="header-text">
+                            <div class="title">
+                                <h1 itemprop="name"><?= $section->getTitle() ?></h1>
+                            </div>
 
-                        <div class="title">
-                            <h1 itemprop="name"><?= $section->getTitle() ?></h1>
+                            <div class="subTitle">
+                                <h3 itemprop="description"><?= $section->getSubTitle() ?></h3>
+                            </div>
+
+                            <div class="tagLine">
+                                <h4><?= $section->getTagLine() ?></h4>
+                            </div>
                         </div>
-
-                        <div class="subTitle">
-                            <h3 itemprop="description"><?= $section->getSubTitle() ?></h3>
-                        </div>
-
-                        <div class="tagLine">
-                            <h4><?= $section->getTagLine() ?></h4>
+                        <div class="images">
+                            <? if($footer->getOrganisations()): ?>
+                                <? foreach($footer->getOrganisations() as $organisation) : ?>
+                                    <img class="img-thumbnail logo" itemprop="logo" src="<?= $staticDir ?>/images/<?= $organisation->getLogo() ?>" />
+                                <? endforeach; ?>
+                            <? endif; ?>
                         </div>
 
 
@@ -101,7 +109,7 @@
                                 Open <time itemprop="openingHours" datetime="<?= $contact->getOpeningHoursSchema() ?>"><?= $contact->getOpeningHoursText() ?></time>
                             </p>
                             <? foreach($contact->getTelephoneNumbers() as $number): ?>
-                                <a class="external-link" href="tel://<?= $number ?>">
+                                <a class="external-link" href="tel://<?= str_replace(' ', '', $number) ?>">
                                     <span itemprop="telephone"><?= $number ?></span>
                                 </a>
                             <? endforeach; ?>
@@ -125,6 +133,8 @@
         </div> <!-- /container -->
 
         <footer>
+            <h3>Hanley &amp; Co</h3>
+            <h4>Accountants You Can Talk To</h4>
             <div class="images">
                 <? if($footer->getOrganisations()): ?>
                     <? foreach($footer->getOrganisations() as $organisation) : ?>
